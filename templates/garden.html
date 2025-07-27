@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Garden</title>
+    </head>
+
+    <body>
+        <div class = "container">
+            <h1>How to nurture the plant?</h1>
+            <div class="response-box">
+                {{response | safe}}
+            </div>
+            <a class = "back-home" href="{{ url_for('index') }}" class="btn"> Back to Upload</a>
+            <a class = "back-home" href="javascript:history.back()" class="btn"> Back to Previous Page</a>
+        </div>
+    </body>
+
+</html>

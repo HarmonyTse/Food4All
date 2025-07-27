@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Upload Image</title>
+    </head>
+
+    <body>
+        <div class="container">
+            <h1>Food4All</h1>
+            <h2>Upload a photo of a plant to determine what parts are edible.</h2>
+            <form action="/upload" method="POST" enctype="multipart/form-data">
+                <input id="UploadButton" type="file" name="image_file" accept="image/*" required>
+                <input id="SubmitButton" type="submit" value="Upload Image">
+            </form>
+            
+            <h1>Check Plant Health</h1>
+            <form action="/disease" method="POST" enctype="multipart/form-data">
+                <input id="UploadButton" type="file" name="image_file" accept="image/*" required>
+                <input id="SubmitButton" type="submit" value="Check Plant Health">
+            </form>
+
+            <h2>It usually takes 30 seconds to load because the AI is thinking. <br>Thank you for the patience.</h2>
+        </div>
+    </body>
+
+</html>

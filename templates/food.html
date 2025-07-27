@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Recipes</title>
+    </head>
+
+    <body>
+        <div class = "container">
+            <h1>Is the plant edible?</h1>
+            {% if not edible %}
+                <h2 class = "warning">⚠️ This plant may not be edible! <br> DO NOT CONSUME!!</h2>
+            {% endif %}
+            <div class="response-box">
+                {{is_edible | safe}}
+            </div>
+            {% if edible %}
+                <form class = "container" action="/recipes" method="POST">
+                    <input type="hidden" name="plant" value="{{ plant }}">
+                    <button class="btn" type="submit">Get Meal Ideas</button>
+                </form>
+
+                <form class = "container" action="/garden" method="POST">
+                    <input type="hidden" name="plant" value="{{ plant }}">
+                    <button class="btn" type="submit">Learn How to Nurture the Plant</button>
+                </form>
+            {% endif %}
+
+            <a class = "back-home" href="{{ url_for('index') }}" class="btn"> Back to Upload</a>
+        </div>
+    </body>
+
+</html>

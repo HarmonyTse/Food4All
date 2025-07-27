@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='fridgeVisionStyle.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Health Check</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Check Your Plant's Health</h1>
+        <form action="/diagnose" method="POST" enctype="multipart/form-data">
+            <input type="file" name="image_file" accept="image/*" required>
+            <input class="btn" type="submit" value="Analyze Plant">
+        </form>
+
+        <a class="btn" href="{{ url_for('index') }}">Back to Upload</a>
+    </div>
+</body>
+</html>

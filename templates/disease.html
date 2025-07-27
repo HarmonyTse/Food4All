@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Plant Health</title>
+    </head>
+
+    <body>
+        <div class = "container">
+            <h1>Plant Health</h1>
+            <div class="response-box">
+                {{response | safe}}
+            </div>
+            <a class = "back-home" href="{{ url_for('index') }}" class="btn"> Back to Upload</a>
+        </div>
+    </body>
+
+</html>
